@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<form method="post" action="/Home/Info">
+    <p>
+        <label>Name:</label><br />
+        <input type="text" name="name" />
+    </p>
+    <p>
+        <label>Age:</label><br />
+        <input type="number" name="age" />
+    </p>
+    <input type="submit" value="Send" />
+</form>
