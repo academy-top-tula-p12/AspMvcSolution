@@ -1,0 +1,43 @@
+﻿@{
+    var title = ViewData["Title"];
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@title</title>
+    <style>
+        .header{
+            height: 50px;
+            background-color: ghostwhite;
+        }
+
+        .footer {
+            height: 50px;
+            background-color: darkmagenta;
+            color: white;
+        }
+
+        aside{
+            width: 200px;
+            height: 300px;
+        }
+        .content{
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="/Home/Index">Home</a> | <a href="/Home/Privacy">Privacy</a>
+    </header>
+    <div class="content">
+        @*@RenderSection("Aside", false)*@
+        <div>@RenderBody()</div>
+    </div>
+    
+    <footer class="footer">
+        @RenderSection("Footer")
+    </footer>
+</body>
+</html>

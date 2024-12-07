@@ -1,0 +1,12 @@
+﻿@{
+    Employee employee = ViewData["Employee"] as Employee;
+}
+
+<h1>@ViewData["Message"]</h1>
+@* <h2>@(((Employee)ViewData["Employee"]).Name)</h2> *@
+<h2>@ViewBag.Info</h2>
+<ul>
+    <li>Name: @(employee.Name)</li>
+    <li>Age: @(employee.Age)</li>
+</ul>
+

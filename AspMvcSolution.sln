@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35514.174 d17.12
+VisualStudioVersion = 17.12.35514.174
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspMvcWelcomeApp", "AspMvcWelcomeApp\AspMvcWelcomeApp.csproj", "{1E49B63B-8BBF-4F1D-9A7A-24E9431F992F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspCoreToMvcApp", "..\AspCoreToMvcApp\AspCoreToMvcApp\AspCoreToMvcApp.csproj", "{A61DB655-1CAD-49B8-B42F-053ED785F194}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspViewsApp", "AspViewsApp\AspViewsApp.csproj", "{89141B1A-950B-4D86-843D-487DF8B0351C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{A61DB655-1CAD-49B8-B42F-053ED785F194}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A61DB655-1CAD-49B8-B42F-053ED785F194}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A61DB655-1CAD-49B8-B42F-053ED785F194}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89141B1A-950B-4D86-843D-487DF8B0351C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89141B1A-950B-4D86-843D-487DF8B0351C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89141B1A-950B-4D86-843D-487DF8B0351C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89141B1A-950B-4D86-843D-487DF8B0351C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,23 @@
+﻿@* @model ViewModel *@
+
+@* <h1>@Model.Title</h1> *@
+@* <h3>@Model.Description</h3> *@
+
+@* <ul> *@
+@*     @foreach(var item in Model.Products) *@
+@*     { *@
+@*         <li>@item</li> *@
+@*     } *@
+@* </ul> *@
+
+@* <h4>@Model.Footer</h4> *@
+
+@model Dictionary<string, object>
+@{
+    Employee employee = Model["Employee"] as Employee;
+}
+
+
+<h1>@Model["Title"]</h1>
+<h3>@(employee.Name)</h3>
+<h3>@(employee.Age)</h3>

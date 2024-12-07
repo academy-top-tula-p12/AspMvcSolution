@@ -1,0 +1,25 @@
+﻿@using AspViewsApp.Services
+
+@model Dictionary<string, object>
+@inject ITimeService timeService
+@{
+    
+    ViewData["Title"] = "Home Page";
+    Employee employee = new() { Name = "Bobby", Age = 25 };
+ }
+
+<div class="content">
+    @await Html.PartialAsync("Aside", Model["AsideMenu"]);
+
+    <div class="text-center">
+        <h1 class="display-4">Welcome @timeService.GetTime()</h1>
+        <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    </div>
+</div>
+
+
+
+@section Footer{
+    Home Index Copyright (c)
+}
+

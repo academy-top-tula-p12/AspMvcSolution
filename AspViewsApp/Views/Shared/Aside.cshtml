@@ -1,0 +1,14 @@
+﻿@model Dictionary<string, string>
+@{
+    //var menu = ViewData["Menu"] as Dictionary<string, string>;
+}
+
+<aside>
+    Left sidebar
+    <ul>
+    @foreach(var item in Model)
+    { 
+    <li><a href="@item.Value">@item.Key</a></li>
+    }
+    </ul>
+</aside>

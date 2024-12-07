@@ -4,8 +4,30 @@
 @{
     string title = "Start Page";
     string time = DateTime.Now.ToLongTimeString();
-    bool day = DateTime.Now.Hour < 18;
+    int hour = DateTime.Now.Hour;
+
+    string[] names = { "Bobby", "Sammy", "Tommy" };
 }
+
+@functions
+{
+    void GetItem(string item)
+    {
+        <li>@item</li>
+    }
+
+    void ShowList(string[] items)
+    {
+        <ul>
+            @foreach(string item in @items)
+            {
+                GetItem(@item);
+                //<li>@item</li>
+            }
+        </ul>
+    }
+}
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,13 +36,39 @@
 <body>
     <h1>@title</h1>
     <h2>Current time: @time</h2>
-    @if(day)
+    @if(hour > 5 && hour < 12)
+    {
+        <h2>Good Morning</h2>
+    }
+    else if(hour >= 12 && hour < 18)
     {
         <h2>Good Day</h2>
     }
-    else
+    else if(hour >= 18 && hour < 22)
     {
         <h2>Good Evening</h2>
     }
+    else
+    {
+        <h2>Good Night</h2>
+    }
+
+    <ul>
+        @* @for(int i = 0; i < names.Length; i++) *@
+        @* { *@
+        @*     <li>@names[i]</li> *@
+        @* } *@
+        @{
+            foreach (var n in names)
+            {
+                GetItem(n);
+            }
+        }
+    </ul>
+    @{
+        ShowList(@names);
+    }
+
+    
 </body>
 </html>
