@@ -1,0 +1,27 @@
+﻿@using AspMvcModelsApp.Models
+@using AspMvcModelsApp.ViewModels
+@model FlightsViewModel
+
+@{
+    ViewData["Title"] = "Flights";
+}
+
+<div>
+    <form>
+        <label>Airline:</label>
+        <select name="airlineId">
+            @foreach(AirlineViewModel a in Model.Airlines)
+            {
+                <option value="@a.Id">@a.Name</option>
+            }
+        </select>
+        <input type="submit" value="Select" />
+    </form>
+    <br />
+    <ul>
+        @foreach(Flight f in Model.Flights)
+        {
+            <li>@f.ToString()</li>
+        }
+    </ul>
+</div>

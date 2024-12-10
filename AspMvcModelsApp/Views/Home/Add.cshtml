@@ -1,0 +1,35 @@
+﻿@using AspMvcModelsApp.Models
+@using AspMvcModelsApp.ViewModels
+
+@model IEnumerable<AirlineViewModel>
+
+<form method="post">
+    <div>
+        <label>Airline:</label>
+        <select name="airlineId">
+            @foreach (AirlineViewModel a in Model)
+            {
+                <option value="@a.Id">@a.Name</option>
+            }
+        </select>
+    </div>
+    <div>
+        <label>Name:</label>
+        <input type="text" name="Name" />
+    </div>
+    <div>
+        <label>FromCity:</label>
+        <input type="text" name="FromCity" />
+    </div>
+    <div>
+        <label>ToCity:</label>
+        <input type="text" name="ToCity" />
+    </div>
+    <div>
+        <label>Date:</label>
+        <input type="datetime-local" name="DateTime" />
+    </div>
+    <div>
+        <input type="submit" value="Add" />
+    </div>
+</form>
