@@ -1,0 +1,96 @@
+﻿@* <form method="post", action="Home/Form"> *@
+@*     <div> *@
+@*         <label>Name:</label><br /> *@
+@*         <input type="text" name="name" /> *@
+@*     </div> *@
+@*     <div> *@
+@*         <label>Age:</label><br /> *@
+@*         <input type="number" name="age" /> *@
+@*     </div> *@
+@*     <div> *@
+@*         <input type="submit" value="Send" /> *@
+@*     </div> *@
+@* </form> *@
+
+@* @using(Html.BeginForm("Form", "Home", FormMethod.Post)) *@
+@* { *@
+@*     <div> *@
+@*         @Html.Label("name", "Name:") *@
+@*         @Html.TextBox("name") *@
+@*     </div> *@
+@*     <div> *@
+@*         @Html.Label("age", "Age:") *@
+@*         @Html.TextBox("age", "", new { type="number" }) *@
+@*     </div> *@
+@*     <div> *@
+@*         <input type="submit" value="Send" /> *@
+@*     </div> *@
+@* } *@
+
+
+@* @model AspMvcHtmlHelpersApp.Models.Employee *@
+
+@* @using(Html.BeginForm("Form", "Home", FormMethod.Post)) *@
+@* { *@
+@*      <div>  *@
+@*          @Html.LabelFor(m => m.Name, "Name:") *@
+@*          @Html.TextBoxFor(m => m.Name) *@
+@*      </div>  *@
+@*      <div> *@
+@*         @Html.LabelFor(m => m.Name, "Age:") *@
+@*         @Html.TextBoxFor(m => m.Age, "", new { type = "number" }) *@
+@*     </div>  *@
+@*      <div>  *@
+@*          <input type="submit" value="Send" />  *@
+@*      </div> *@
+@*  } *@
+
+@model AspMvcHtmlHelpersApp.Models.Flight
+@* @using (Html.BeginForm("Form", "Home", FormMethod.Post)) *@
+@* { *@
+@*     <div> *@
+@*         @Html.LabelFor(m => m.Name, "Name:") *@
+@*         @Html.EditorFor(m => m.Name) *@
+@*     </div> *@
+
+@*     <div> *@
+@*         @Html.LabelFor(m => m.FromCity, "From City:") *@
+@*         @Html.EditorFor(m => m.FromCity) *@
+@*     </div> *@
+
+@*     <div> *@
+@*         @Html.LabelFor(m => m.Date, "Date:") *@
+@*         @Html.EditorFor(m => m.Date) *@
+@*     </div> *@
+
+@*     <div> *@
+@*         @Html.LabelFor(m => m.Time, "Time:") *@
+@*         @Html.EditorFor(m => m.Time) *@
+@*     </div> *@
+
+@*     <div> *@
+@*         @Html.LabelFor(m => m.Activity, "Activity:") *@
+@*         @Html.EditorFor(m => m.Activity) *@
+@*     </div> *@
+
+@*     <div> *@
+@*         @Html.LabelFor(m => m.Activity, "Activity:") *@
+@*         @Html.EditorFor(m => m.Activity) *@
+@*     </div> *@
+
+@*     <div> *@
+@*         @Html.LabelFor(m => m.Type, "Type:") *@
+@*         @Html.EditorFor(m => m.Type) *@
+@*     </div> *@
+
+@*     <div> *@
+@*         @Html.LabelFor(m => m.Price, "Price:") *@
+@*         @Html.EditorFor(m => m.Price) *@
+@*     </div> *@
+
+@*     <div> *@
+@*          <input type="submit" value="Send" /> *@
+@*      </div> *@
+@* } *@
+
+@Html.EditorForModel()

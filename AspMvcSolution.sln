@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspMvcRoutingApp", "AspMvcR
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspMvcModelsApp", "AspMvcModelsApp\AspMvcModelsApp.csproj", "{99F90B82-806F-4579-AB82-6A1299101B7A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspMvcHtmlHelpersApp", "AspMvcHtmlHelpersApp\AspMvcHtmlHelpersApp.csproj", "{2D300463-9204-49B2-BD3E-11304DF13E12}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{99F90B82-806F-4579-AB82-6A1299101B7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99F90B82-806F-4579-AB82-6A1299101B7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99F90B82-806F-4579-AB82-6A1299101B7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D300463-9204-49B2-BD3E-11304DF13E12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D300463-9204-49B2-BD3E-11304DF13E12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D300463-9204-49B2-BD3E-11304DF13E12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D300463-9204-49B2-BD3E-11304DF13E12}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

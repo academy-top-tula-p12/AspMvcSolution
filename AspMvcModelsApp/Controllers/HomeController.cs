@@ -7,41 +7,52 @@ namespace AspMvcModelsApp.Controllers
 {
     public class HomeController : Controller
     {
-        List<Airline> airlines;
+        static List<Airline> airlines = new List<Airline>()
+        {
+            new(){ Id = 1, Name = "Aeroflot" },
+            new(){ Id = 2, Name = "Pobeda" },
+        };
 
-        List<Flight> flights;
+        static List<Flight> flights = new List<Flight>()
+        {
+            new(){ Id = 1, Name = "ASD-890", FromCity = "Moscow", ToCity = "St Peterbug", DateTime = DateTime.Now.AddDays(15), Airline = airlines[0]},
+            new(){ Id = 2, Name = "TR-123", FromCity = "Irkutsk", ToCity = "Kazan", DateTime = DateTime.Now.AddDays(17), Airline = airlines[1] },
+            new(){ Id = 3, Name = "HGT-556", FromCity = "Novosibirsk", ToCity = "Tomsk", DateTime = DateTime.Now.AddDays(9), Airline = airlines[0] },
+        };
 
-        List<AirlineViewModel> airlinesView;
+        //List<AirlineViewModel> airlinesView;
 
-        FlightsViewModel flightsView;
+        //FlightsViewModel flightsView;
         public HomeController()
         {
-            airlines = new List<Airline>()
-            {
-                new(){ Name = "Aeroflot" },
-                new(){ Name = "Pobeda" },
-            };
+            //airlines = new List<Airline>()
+            //{
+            //    new(){ Id = 1, Name = "Aeroflot" },
+            //    new(){ Id = 2, Name = "Pobeda" },
+            //};
 
-            flights = new List<Flight>()
-            {
-                new(){ Name = "ASD-890", FromCity = "Moscow", ToCity = "St Peterbug", DateTime = DateTime.Now.AddDays(15), Airline = airlines[0]},
-                new(){ Name = "TR-123", FromCity = "Irkutsk", ToCity = "Kazan", DateTime = DateTime.Now.AddDays(17), Airline = airlines[1] },
-                new(){ Name = "HGT-556", FromCity = "Novosibirsk", ToCity = "Tomsk", DateTime = DateTime.Now.AddDays(9), Airline = airlines[0] },
-            };
+            //flights = new List<Flight>()
+            //{
+            //    new(){ Id = 1, Name = "ASD-890", FromCity = "Moscow", ToCity = "St Peterbug", DateTime = DateTime.Now.AddDays(15), Airline = airlines[0]},
+            //    new(){ Id = 2, Name = "TR-123", FromCity = "Irkutsk", ToCity = "Kazan", DateTime = DateTime.Now.AddDays(17), Airline = airlines[1] },
+            //    new(){ Id = 3, Name = "HGT-556", FromCity = "Novosibirsk", ToCity = "Tomsk", DateTime = DateTime.Now.AddDays(9), Airline = airlines[0] },
+            //};
 
-            airlinesView
-                = airlines.Select(
-                    a => new AirlineViewModel() { Id = a.Id, Name = a.Name }
-                ).ToList();
-            airlinesView.Insert(0, new AirlineViewModel() { Id = 0, Name = "All" });
+            
         }
 
         public IActionResult Index(int? airlineId)
         {
-            flightsView = new() { Airlines = airlinesView, Flights = flights };
+            List<AirlineViewModel>  airlinesView
+                = airlines.Select(
+                    a => new AirlineViewModel() { Id = a.Id, Name = a.Name }
+                ).ToList();
+            airlinesView.Insert(0, new AirlineViewModel() { Id = 0, Name = "All" });
+
+            FlightsViewModel flightsView = new() { Airlines = airlinesView, Flights = flights };
 
             if(airlineId is not null && airlineId > 0)
-                flightsView.Flights = flights.Where(f => f.Airline?.Id == airlineId).ToList();
+                flightsView.Flights = flights.Where(f => f.Airline?.Id == airlineId);
 
             return View(flightsView);
         }
@@ -59,6 +70,10 @@ namespace AspMvcModelsApp.Controllers
         [HttpPost]
         public IActionResult Add(Flight flight)
         {
+            var maxId = flights.Max(f => f.Id);
+            flight.Id = maxId + 1;
+
+
             flights.Add(flight);
             return RedirectToAction("Index");
         }

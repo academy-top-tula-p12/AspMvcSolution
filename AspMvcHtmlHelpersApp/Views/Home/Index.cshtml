@@ -1,0 +1,18 @@
+﻿@using AspMvcHtmlHelpersApp
+@using AspMvcHtmlHelpersApp.HtmlHelpers
+
+@model ListViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@Html.Create(Model.Title, Model.Items, Model.Order)
+
+@Html.ActionLink("To form", "Form", "Home", new { name="bobby", age=25 }, new{ @class="red-text" })
+
+@Html.RouteLink("To privacy", "default", new { Action = "Privacy" }, new { @class = "red-text" })
+
+<p>@Url.Action("Form", "Home", new { name = "bobby", age = 25 })</p>
+<p>@Url.RouteUrl("default", new { action = "Privacy" })</p>
+<p>@Url.Content(@Url.RouteUrl("default", new { action = "Privacy" }))</p>

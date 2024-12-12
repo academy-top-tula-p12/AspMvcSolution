@@ -2,7 +2,7 @@
 {
     public class Flight
     {
-        static int globalId = 1;
+
         DateTime? dateTime;
         public int Id { get; set; }
         public string Name { get; set; } = null!;
@@ -29,7 +29,7 @@
 
         public Flight()
         {
-            Id = globalId++;
+
         }
 
         public override string ToString()
