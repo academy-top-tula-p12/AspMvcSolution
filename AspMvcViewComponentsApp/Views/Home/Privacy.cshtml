@@ -1,0 +1,13 @@
+﻿@addTagHelper *, AspMvcViewComponentsApp
+
+@{
+    ViewData["Title"] = "Privacy Policy";
+}
+<h1>@ViewData["Title"]</h1>
+@* <h3>@await Component.InvokeAsync("Date")</h3> *@
+@* <h3>@await Component.InvokeAsync("Time")</h3> *@
+
+<h3><vc:date></vc:date></h3>
+<h3><vc:time/></h3>
+
+<p>@await Component.InvokeAsync("FileRead")</p>

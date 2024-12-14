@@ -1,0 +1,24 @@
+﻿@model AspMvcTagHelpersApp.Models.Employee
+
+<form asp-action="Form" asp-controller="Home">
+    <div>
+        <label asp-for="Name"></label>
+        <input type="text" asp-for="Name" />
+    </div>
+    <div>
+        <label asp-for="Age"></label>
+        <input type="number" asp-for="Age" />
+    </div>
+    <div>
+        <label asp-for="Company"></label>
+        <select asp-for="CompanyId" asp-items="ViewBag.Companies"></select>
+    </div>
+    <div>
+        <label asp-for="PositionId"></label>
+        <select asp-for="PositionId" asp-items="Html.GetEnumSelectList<Position>()"></select>
+        @* <select asp-for="Position" asp-items="@new SelectList(Enum.GetNames(typeof(Position)))"></select> *@
+    </div>
+    <div>
+        <input type="submit" value="Add" />
+    </div>
+</form>
