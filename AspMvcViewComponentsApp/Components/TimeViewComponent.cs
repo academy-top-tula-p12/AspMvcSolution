@@ -1,13 +1,24 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AspMvcViewComponentsApp.Types;
+using Microsoft.AspNetCore.Mvc;
 
 namespace AspMvcViewComponentsApp.Components
 {
     //[ViewComponent]
     public class Time : ViewComponent
     {
-        public string Invoke()
+        public IViewComponentResult Invoke(bool secondView, FormatTime format = FormatTime.Hours24)
         {
-            return $"Time: {DateTime.Now.ToShortTimeString()}";
+            string time = "";
+            if(format == FormatTime.Hours24)
+                time = $"Time: {DateTime.Now.ToString("HH:mm")}";
+            else
+                time = $"Time: {DateTime.Now.ToString("hh:mm")}";
+
+            if (secondView)
+                time += $":{DateTime.Now.Second}";
+
+            return Content(time) ;
+
         }
     }
 }

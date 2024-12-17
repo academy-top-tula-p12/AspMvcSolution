@@ -1,13 +1,23 @@
 ﻿@addTagHelper *, AspMvcViewComponentsApp
+@using AspMvcViewComponentsApp.Models
 
 @{
     ViewData["Title"] = "Privacy Policy";
+    Flight flight = new()
+            {
+                Id = 1,
+                Name = "ASD-897",
+                ToCity = "Moscow",
+                Date = DateTime.Now.AddDays(25)
+            };
 }
 <h1>@ViewData["Title"]</h1>
 @* <h3>@await Component.InvokeAsync("Date")</h3> *@
 @* <h3>@await Component.InvokeAsync("Time")</h3> *@
 
 <h3><vc:date></vc:date></h3>
-<h3><vc:time/></h3>
+<h3><vc:time second-view="false" format="@AspMvcViewComponentsApp.Types.FormatTime.Hours12"/></h3>
+
+@await Component.InvokeAsync("FlightCard", flight)
 
 <p>@await Component.InvokeAsync("FileRead")</p>
